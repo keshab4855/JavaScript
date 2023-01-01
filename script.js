@@ -1,3 +1,5 @@
+"use strict";
+
 ////////////////// VALUES AND VARIABLES////////////////////////////
 // let country = "Nepal";
 // let continent = "Asia";
@@ -156,11 +158,34 @@
 // § Value X is between 50 and 300, if it's >= 50 && <= 300 �
 
 ////////////////////////////CODING CHALLENGE 4 SOLUTION////////////////////////////
-let bill = 275;
-let tip = 41.25;
+// let bill = 275;
+// let tip = 41.25;
 
-50 <= bill <= 300
-  ? console.log(`Tip is ${(15 / 100) * bill}`)
-  : console.log(`Tip is ${(20 / 100) * bill}`);
+// 50 <= bill <= 300
+//   ? console.log(`Tip is ${(15 / 100) * bill}`)
+//   : console.log(`Tip is ${(20 / 100) * bill}`);
 
-console.log(`Total value was ${bill + tip}`);
+// console.log(`Total value was ${bill + tip}`);
+
+////////////////////////////JS FUNDAMENTAL////////////////////////////
+// function logger() {
+//   return console.log("My name is Keshab");
+// }
+
+// logger();
+// logger();
+
+///////////////////////FUNCTIONS//////////////////////
+// function fruitProcessor(apples, oranges) {
+//   //   console.log(apples, oranges);
+//   const juice = `Juice with ${apples}apples and ${oranges}oranges`;
+//   return juice;
+// }
+
+// const appleJuice = fruitProcessor(5, 3);
+// console.log(appleJuice);
+
+// const fruitProcessor = (apple, orange) => {
+//   console.log(`Juice with ${apple}apples and ${orange}oranges`);
+// };
+// fruitProcessor(2, 3);
