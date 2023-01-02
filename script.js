@@ -324,3 +324,195 @@
 
 // const total = [bills[0] + tip1, bills[1] + tip2, bills[2] + tip3];
 // console.log(total);
+
+////////////////////////////OBJECTS////////////////////////////
+// const keshab = {
+//   fName: "Keshab",
+//   lName: "Roka",
+//   age: 2023 - 1998,
+//   friends: ["keshb", "hari", "Ram"],
+// };
+// console.log(keshab);
+// console.log(keshab.lName);
+// console.log(keshab["lName"]);
+
+// console.log(
+//   `${keshab.fName} has ${keshab.friends.length} friends. His best friend is ${keshab.friends[0]}`
+// );
+
+// console.log(
+//   `${keshab["fName"]} has ${keshab["friends"].length} friends. His best friend is ${keshab["friends"][0]}`
+// );
+
+// const keshab = {
+//   fName: "Keshab",
+//   lName: "Roka",
+//   birthYear: 1998,
+//   friends: ["keshb", "hari", "Ram"],
+//   hasDriverLicense: false,
+//   calcAge: function () {
+//     return 2023 - this.birthYear;
+//   },
+// };
+
+// console.log(keshab.calcAge());
+// keshab.hasDriverLicense
+//   ? (keshab.details = "has a license")
+//   : (keshab.details = "has not a license");
+
+// console.log(
+//   `${keshab.fName} is a ${keshab.calcAge()} year old ${(keshab.job =
+//     "teacher")} and he ${keshab.details}`
+// );
+
+////////////////////////////CODING CHALLENGE 3 ////////////////////////////
+
+// Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+// implement the calculations! Remember: BMI = mass / height ** 2 = mass
+// / (height * height) (mass in kg and height in meter)
+// Your tasks:
+// 1. For each of them, create an object with properties for their full name, mass, and
+// height (Mark Miller and John Smith)
+// 2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+// method on both objects). Store the BMI value to a property, and also return it
+// from the method
+// 3. Log to the console who has the higher BMI, together with the full name and the
+// respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+// Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+// tall.
+
+////////////////////////////CODING CHALLENGE 3 SOLUTION////////////////////////////
+// let Mark = {
+//   fName: "Mark ",
+//   lName: "Miller",
+//   fullName: function () {
+//     return this.fName + this.lName;
+//   },
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     return this.mass / this.height ** 2;
+//   },
+// };
+
+// console.log(Mark.fullName);
+// const markBMI = Mark.calcBMI();
+
+// let John = {
+//   fName: "John ",
+//   lName: "SMith",
+//   fullName: function () {
+//     return this.fName + this.lName;
+//   },
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     return this.mass / this.height ** 2;
+//   },
+// };
+// const johnBMI = John.calcBMI();
+
+// markBMI > johnBMI
+//   ? console.log(
+//       `${Mark.fullName()}'s ${markBMI} has higher BMI than ${John.fullName()}'s ${johnBMI}`
+//     )
+//   : console.log(
+//       `${John.fullName()}'s ${johnBMI} has higher BMI than ${Mark.fullName()}'s ${markBMI}`
+//     );
+
+////////////////////////////FOR LOOP////////////////////////////
+// for (let index = 1; index <= 10; index++) {
+//   console.log(`Lifting weight repetition ${index}`);
+// }
+
+// const keshabArray = [
+//   "keshab",
+//   "roka",
+//   2023 - 1998,
+//   "teacher",
+//   ["Hari", "sahn", "alex"],
+//   true,
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < keshabArray.length; i++) {
+//   console.log(keshabArray[i], typeof keshabArray[i]);
+//   types.push(typeof keshabArray[i]);
+// }
+
+// console.log(types);
+
+// const years = [1991, 1994, 2001, 2003, 2004];
+// let age = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   age[i] = 2023 - years[i];
+// }
+// console.log(age);
+
+//////////////////////continuing and break////////////////////////
+
+// const keshabArray = [
+//   "keshab",
+//   "roka",
+//   2023 - 1998,
+//   "teacher",
+//   ["Hari", "sahn", "alex"],
+//   true,
+// ];
+
+// console.log("------Only strings----");
+
+// for (let i = 0; i < keshabArray.length; i++) {
+//   if (typeof keshabArray[i] !== "string") continue;
+//   console.log(keshabArray[i], typeof keshabArray[i]);
+// }
+
+// console.log("------Break with numbers----");
+
+// for (let i = 0; i < keshabArray.length; i++) {
+//   if (typeof keshabArray[i] === "number") break;
+//   console.log(keshabArray[i], typeof keshabArray[i]);
+// }
+
+//////////////looping backwards//////////////
+// const keshabArray = [
+//   "keshab",
+//   "roka",
+//   2023 - 1998,
+//   "teacher",
+//   ["Hari", "sahn", "alex"],
+//   true,
+// ];
+// for (let i = keshabArray.length - 1; i > 0; i--) {
+//   console.log([i], keshabArray[i]);
+// }
+
+//////////////loops in loops///////////////////
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`-----Starting exercise ${exercise}`);
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Lifting weight repetition ${rep}`);
+//   }
+// }
+
+/////////////////while loop ////////////////////////////
+// for (let index = 1; index <= 10; index++) {
+//   console.log(`Lifting weight repetition ${index}`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`Lifting weight repetition ${rep}`);
+//   rep++;
+// }
+
+let dice = Math.trunc(Math.random() * 6);
+while (dice !== 6) {
+  console.log(`${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log("Hurray ! you got 6");
+  }
+}
