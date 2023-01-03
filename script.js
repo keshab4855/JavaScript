@@ -508,11 +508,18 @@
 //   rep++;
 // }
 
-let dice = Math.trunc(Math.random() * 6);
-while (dice !== 6) {
-  console.log(`${dice}`);
-  dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice === 6) {
-    console.log("Hurray ! you got 6");
-  }
-}
+// let dice = Math.trunc(Math.random() * 6);
+// while (dice !== 6) {
+//   console.log(`${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) {
+//     console.log("Hurray ! you got 6");
+//   }
+// }
+
+////////////////////DOM MANIPULATION//////////////////////////
+
+let scoreMessage = document.querySelector(".message").textContent;
+let secretNumber = document.querySelector(".number").textContent;
+let score = document.querySelector(".score").textContent;
+console.log(secretNumber);
