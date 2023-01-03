@@ -519,7 +519,28 @@
 
 ////////////////////DOM MANIPULATION//////////////////////////
 
-let scoreMessage = document.querySelector(".message").textContent;
-let secretNumber = document.querySelector(".number").textContent;
-let score = document.querySelector(".score").textContent;
-console.log(secretNumber);
+// let scoreMessage = document.querySelector(".message").textContent;
+// let secretNumber = document.querySelector(".number").textContent;
+// let score = document.querySelector(".score").textContent;
+// document.querySelector(".guess").value = 23;
+
+// console.log(document.querySelector(".guess").value);
+
+document.querySelector(".check").addEventListener("click", () => {
+  const guess = Number(document.querySelector(".guess").value);
+  if (!guess) {
+    document.querySelector(".message").textContent = "No Number !!";
+  }
+
+  // document.querySelector(".number").textContent = Math.trunc(
+  //   Math.random() * 20
+  // );
+
+  // if (
+  //   document.querySelector(".guess").value ===
+  //   document.querySelector(".number").textContent
+  // ) {
+  //   document.querySelector(".message").textContent = "Winner";
+  // }
+  return;
+});
