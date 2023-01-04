@@ -593,6 +593,10 @@ document.querySelector(".close-modal").addEventListener("click", () => {
   overlay.classList.add("hidden");
 });
 
+overlay.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
 console.log(btnsOpenModal);
 
 //////////////////////////////////Modal finished/////////////////////////
