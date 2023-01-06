@@ -603,11 +603,35 @@
 
 //////////////////////////Scoping/////////////////////////////////
 
-function calcAge(birthYear) {
-  const age = 2023 - birthYear;
-  console.log(fName);
-  return age;
-}
+// function calcAge(birthYear) {
+//   const age = 2023 - birthYear;
+//   function printAge() {
+//     const output = `${fName} You are ${age}, born in ${birthYear}`;
+//     console.log(output);
+//   }
+//   printAge();
+//   return age;
+// }
 
-const fName = "keshab";
-console.log(calcAge(1998));
+// const fName = "keshab";
+
+// console.log(calcAge(1998));
+// console.log(age);
+
+/////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////This Keyword//////////////////////////////////////
+console.log(this);
+const calcAge = function (birthYear) {
+  console.log(2023 - birthYear);
+  console.log(this);
+};
+
+calcAge(1998);
+
+const calcAge1 = (birthYear) => {
+  console.log(2023 - birthYear);
+  console.log(this);
+};
+
+calcAge1(2001);
