@@ -621,17 +621,31 @@
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////This Keyword//////////////////////////////////////
-console.log(this);
-const calcAge = function (birthYear) {
-  console.log(2023 - birthYear);
-  console.log(this);
+// console.log(this);
+// const calcAge = function (birthYear) {
+//   console.log(2023 - birthYear);
+//   console.log(this);
+// };
+
+// calcAge(1998);
+
+// const calcAge1 = (birthYear) => {
+//   console.log(2023 - birthYear);
+//   console.log(this);
+// };
+
+// calcAge1(2001);
+
+/////////////////////////////Regular Function VS Arrow Function////////////////////
+const jonas = {
+  fName: "Keshab",
+  year: 1998,
+  calcAGe: function () {
+    console.log(this);
+    console.log(2023 - this.year);
+  },
+  greet: () => console.log(`Hey ${this.fName}`),
 };
 
-calcAge(1998);
-
-const calcAge1 = (birthYear) => {
-  console.log(2023 - birthYear);
-  console.log(this);
-};
-
-calcAge1(2001);
+jonas.greet();
+jonas.calcAGe();
