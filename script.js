@@ -637,15 +637,34 @@
 // calcAge1(2001);
 
 /////////////////////////////Regular Function VS Arrow Function////////////////////
-const jonas = {
-  fName: "Keshab",
-  year: 1998,
-  calcAGe: function () {
-    console.log(this);
-    console.log(2023 - this.year);
-  },
-  greet: () => console.log(`Hey ${this.fName}`),
+// const jonas = {
+//   fName: "Keshab",
+//   year: 1998,
+//   calcAGe: function () {
+//     console.log(this);
+//     console.log(2023 - this.year);
+//   },
+//   greet: () => console.log(`Hey ${this.fName}`),
+// };
+
+// jonas.greet();
+// jonas.calcAGe();
+
+/////////////////////////////Primitive Vs Refernce////////////////////
+
+let lName = "Roka";
+let oldLname = lName;
+lName = "abc";
+console.log(oldLname);
+console.log(lName);
+
+const keshab = {
+  fName: "karna",
+  lName: "Roka",
+  age: 24,
 };
 
-jonas.greet();
-jonas.calcAGe();
+const newKeshab = keshab;
+newKeshab.fName = "Keshab";
+console.log(keshab);
+console.log(newKeshab);
