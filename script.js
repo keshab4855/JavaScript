@@ -717,37 +717,119 @@
 // console.log(i, ...j);
 
 /////////////////////////////////Destructuring objects/////////////////
-const restaurant = {
-  name: "Classico Italiano",
-  location: "Via Angelo Tavanti 23, Firenze, Italy",
-  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
-  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
-  mainMenu: ["Pizza", "Pasta", "Risotto"],
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+// const restaurant = {
+//   name: "Classico Italiano",
+//   location: "Via Angelo Tavanti 23, Firenze, Italy",
+//   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+//   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+//   mainMenu: ["Pizza", "Pasta", "Risotto"],
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+// };
+
+// const { name, openingHours, categories } = restaurant;
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+
+// let a = 111;
+// let b = 2222;
+// let obj = { a: 333, b: 444, c: 555 };
+// ({ a, b } = obj);
+// console.log(a, b);
+
+///////////////////////////spread operator////////////////////
+// const arr = [2, 3, 4];
+// const newArr = [1, ...arr];
+// console.log(newArr);
+
+///////////////////////////rest operator////////////////////
+// const arr = [1, 2, 3, 4];
+// const [a, b, ...others] = arr;
+// console.log(a, b, others);
+// const restaurant = {
+//   name: "Classico Italiano",
+//   location: "Via Angelo Tavanti 23, Firenze, Italy",
+//   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+//   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+//   mainMenu: ["Pizza", "Pasta", "Risotto"],
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+// };
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
+
+///////////////////////////////Working with strings////////////////////////////
+// const airline = "TAP Air Portugal";
+// const plane = "A320";
+// console.log(plane[0]);
+// console.log(plane.length);
+
+// console.log(airline.indexOf("Portugal"));
+
+////////////////////Default parameters////////////////////////////////
+// const bookings = [];
+// const createBooking = function (flightName, numPassengers = 1, price = 99) {
+//   const booking = {
+//     flightName,
+//     numPassengers,
+//     price,
+//   };
+//   console.log(booking);
+//   bookings.push(booking);
+// };
+
+// createBooking("ABC", 1234, 8888);
+
+const flight = "Lh234";
+const keshab = {
+  name: "Keshab",
+  passport: 1232444,
+};
+const checkIn = function (flight, passengers) {
+  flight = "LH9999";
+
+  if (passengers.passport === 1232444) {
+    alert("Check In");
+  } else {
+    alert("wrong passport");
+  }
+  return (passengers.name = "Mr." + passengers.name);
 };
 
-const { name, openingHours, categories } = restaurant;
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
-
-let a = 111;
-let b = 2222;
-let obj = { a: 333, b: 444, c: 555 };
-({ a, b } = obj);
-console.log(a, b);
+console.log(checkIn(flight, keshab));
+console.log(flight);
+console.log(keshab);
