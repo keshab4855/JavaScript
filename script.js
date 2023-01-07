@@ -652,19 +652,66 @@
 
 /////////////////////////////Primitive Vs Refernce////////////////////
 
-let lName = "Roka";
-let oldLname = lName;
-lName = "abc";
-console.log(oldLname);
-console.log(lName);
+// let lName = "Roka";
+// let oldLname = lName;
+// lName = "abc";
+// console.log(oldLname);
+// console.log(lName);
 
-const keshab = {
-  fName: "karna",
-  lName: "Roka",
-  age: 24,
+// const keshab = {
+//   fName: "karna",
+//   lName: "Roka",
+//   age: 24,
+// };
+
+// const newKeshab = keshab;
+// newKeshab.fName = "Keshab";
+// console.log(keshab);
+// console.log(newKeshab);
+
+/////////////////////////////////Destructuring arrrays/////////////////
+const restaurant = {
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
 };
 
-const newKeshab = keshab;
-newKeshab.fName = "Keshab";
-console.log(keshab);
-console.log(newKeshab);
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+const [x, y, z] = arr;
+console.log(a, b, c);
+console.log(x, y, z);
+
+let [main, , secondary] = restaurant.categories;
+// console.log(main, secondary);
+
+[main, , secondary] = [secondary, , main];
+console.log(main, secondary);
+console.log(restaurant.categories);
+
+console.log(restaurant.order(2, 0));
+
+const nestedArr = [2, 4, [5, 6]];
+const [i, , j] = nestedArr;
+console.log(i, ...j);
