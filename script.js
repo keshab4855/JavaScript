@@ -814,22 +814,102 @@
 
 // createBooking("ABC", 1234, 8888);
 
-const flight = "Lh234";
-const keshab = {
-  name: "Keshab",
-  passport: 1232444,
-};
-const checkIn = function (flight, passengers) {
-  flight = "LH9999";
+// const flight = "Lh234";
+// const keshab = {
+//   name: "Keshab",
+//   passport: 1232444,
+// };
+// const checkIn = function (flight, passengers) {
+//   flight = "LH9999";
 
-  if (passengers.passport === 1232444) {
-    alert("Check In");
-  } else {
-    alert("wrong passport");
-  }
-  return (passengers.name = "Mr." + passengers.name);
-};
+//   if (passengers.passport === 1232444) {
+//     alert("Check In");
+//   } else {
+//     alert("wrong passport");
+//   }
+//   return (passengers.name = "Mr." + passengers.name);
+// };
 
-console.log(checkIn(flight, keshab));
-console.log(flight);
-console.log(keshab);
+// console.log(checkIn(flight, keshab));
+// console.log(flight);
+// console.log(keshab);
+
+//////////////////////////////////Closures//////////////////////////////
+// const secureBooking = function () {
+//   let passengerCount = 0;
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
+
+/////////////////////////////////Arrays Methods//////////////////////
+// let arr = ["a", "b", "c", "d", "e"];
+// arr.slice(3);
+
+// console.log(arr);
+// arr.splice(1);
+// arr.reverse();
+
+// console.log(arr);
+
+// const movements = [200, 450, -400, 300, -650, -130, 70, 1300];
+
+// for (let i = 0; i < movements.length; i++) {
+//   if (movements[i] > 0) {
+//     console.log(`You deposited ${movements[i]}`);
+//   } else {
+//     console.log(`You withdraw ${Math.abs(movements[i])}`);
+//   }
+// }
+
+// movements.forEach(function (movement, i, arr) {
+//   if (movement > 0) {
+//     console.log(`Movement: ${i + 1} You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement: ${i + 1} You withdraw ${Math.abs(movement)}`);
+//   }
+// });
+
+///////////////map////////////////////
+// const movements = [200, 450, -400, 300, -650, -130, 70, 1300];
+// const eurToUsd = 1.1;
+// const movementsUSD = movements.map((mov) => mov * eurToUsd);
+// console.log(movements);
+// console.log(movementsUSD);
+
+// const movementsDes = movements.map((item, i) => {
+//   item > 0
+//     ? console.log(`Movement: ${i + 1} You deposited ${item}`)
+//     : console.log(`Movement: ${i + 1} You withdraw ${Math.abs(item)}`);
+// });
+
+//   if (movement > 0) {
+//     console.log(`Movement: ${i + 1} You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement: ${i + 1} You withdraw ${Math.abs(movement)}`);
+//   }
+// });
+
+////////////////////////filter//////////////////////////////
+// const movements = [200, 450, -400, 300, -650, -130, 70, 1300];
+// const deposits = movements.filter((mov) => mov > 0);
+
+// console.log(deposits);
+// const withdrawls = movements.filter((mov) => mov < 0);
+// console.log(withdrawls);
+
+///////////////////////////reduce//////////////////////////////
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const balance = movements.reduce((acc, cur) => {
+//   console.log(acc);
+//   return acc + cur;
+// }, 0);
+
+// console.log(balance);
