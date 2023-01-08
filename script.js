@@ -915,18 +915,29 @@
 // console.log(balance);
 
 /////////////////////////sorting arrays/////////////////////
-const owners = ["Jonas", "keshab", "Hary", "Abdul"];
-const numbers = [222, 555, 666, 33, 111, -22, -333];
-console.log(owners.sort());
-console.log(
-  numbers.sort((a, b) => {
-    if (a > b) {
-      return 1;
-    }
-    if (b > a) {
-      return -1;
-    }
-  })
-);
+// const owners = ["Jonas", "keshab", "Hary", "Abdul"];
+// const numbers = [222, 555, 666, 33, 111, -22, -333];
+// console.log(owners.sort());
+// console.log(
+//   numbers.sort(
+//     (a, b) => a - b
+//     //   if (a > b) {
+//     //     return 1;
+//     //   }
+//     //   if (b > a) {
+//     //     return -1;
+//     //   }
+//     // })
+//   )
+// );
 
-console.log(numbers);
+// console.log(numbers);
+
+//////////////////////////////////Timers: setTimeout and setInterval////////////////////
+// setTimeout(() => console.log("Here is your pizza"), 3000);
+// console.log("waiting");
+
+// setInterval(() => {
+//   const now = new Date();
+//   // console.log(now);
+// });
