@@ -941,3 +941,16 @@
 //   const now = new Date();
 //   // console.log(now);
 // });
+
+/////////////////////////////constructor function ////////////////////////////////////
+// const Person = function (fName, birthYear) {
+//   this.fName = fName;
+//   this.birthYear = birthYear;
+// };
+
+// const Keshab = new Person("Keshab", 1998);
+// console.log(Keshab);
+
+// const matilda = new Person("Matilda", 1990);
+// const jack = new Person("Jack", 2001);
+// console.log(matilda, jack);
