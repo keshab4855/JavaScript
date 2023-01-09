@@ -954,3 +954,17 @@
 // const matilda = new Person("Matilda", 1990);
 // const jack = new Person("Jack", 2001);
 // console.log(matilda, jack);
+
+///////////////////////////////ES6 Classes//////////////////////////////////////////
+class PersonCl {
+  constructor(fName, birthYear) {
+    this.fName = fName;
+    this.birthYear = birthYear;
+  }
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  }
+}
+
+const keshab = new PersonCl("Keshab", 1998);
+keshab.calcAge();
