@@ -956,15 +956,39 @@
 // console.log(matilda, jack);
 
 ///////////////////////////////ES6 Classes//////////////////////////////////////////
-class PersonCl {
-  constructor(fName, birthYear) {
-    this.fName = fName;
-    this.birthYear = birthYear;
-  }
-  calcAge() {
-    console.log(2023 - this.birthYear);
-  }
+// class PersonCl {
+//   constructor(fName, birthYear) {
+//     this.fName = fName;
+//     this.birthYear = birthYear;
+//   }
+//   calcAge() {
+//     console.log(2023 - this.birthYear);
+//   }
+// }
+
+// const keshab = new PersonCl("Keshab", 1998);
+// console.log(keshab.__proto__.__proto__);
+
+//////////////////////////////Promise////////////////////////////////////////////
+function func1() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const error = true;
+      if (!error) {
+        console.log("Your Promise has been resolved");
+        resolve();
+      } else {
+        console.log("Your promise has not been resolved");
+        reject("Sorry not fulfilled");
+      }
+    }, 2000);
+  });
 }
 
-const keshab = new PersonCl("Keshab", 1998);
-keshab.calcAge();
+func1()
+  .then(function () {
+    console.log("Thanks for resolving");
+  })
+  .catch(function () {
+    console.log("Very bad");
+  });
