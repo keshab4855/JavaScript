@@ -995,12 +995,22 @@
 
 /////////////////////////////Async , Await/////////////////////////////////////
 
-const whereAmI = async function (country) {
-  const res = await fetch(`
-https://restcountries.com/v3.1/name/${country}`);
-  const data = await res.json();
-  console.log(data);
-};
+// const whereAmI = async function (country) {
+//   const res = await fetch(`
+// https://restcountries.com/v3.1/name/${country}`);
+//   const data = await res.json();
+//   console.log(data);
+// };
 
-whereAmI("portugal");
-console.log("first");
+// whereAmI("portugal");
+// console.log("first");
+
+/////////////////////////Try Catch///////////////////////////////////////////
+
+try {
+  let y = 1;
+  const x = 3;
+  x = 4;
+} catch (error) {
+  console.log(error.message);
+}
