@@ -1026,8 +1026,22 @@ const handleOnSubmit = (e) => {
 
   const obj = { tasks, hours };
   entryList.push(obj);
-  console.log(entryList);
+
+  display(entryList);
 };
 
-const display
+const display = (taskArg) => {
+  let str = "";
+  taskArg.map((item, index) => {
+    str += `   <tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${item.tasks}</td>
+                    <td>${item.hours} hours</td>
+                    <td>Buttons</td>
+                </tr>`;
+  });
 
+  document.getElementById("entry-tasks").innerHTML = str;
+};
+
+display();

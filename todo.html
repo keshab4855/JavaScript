@@ -15,17 +15,43 @@
 </head>
 
 <body>
-    <form action="javascript:void(0)" onsubmit="handleOnSubmit(this)">
-        <div class="mb-3">
-            <label class="form-label">Tasks</label>
-            <input class="form-control" name="tasks" value="" type="text" id="tasks">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Hours</label>
-            <input class="form-control" name="hrs" value="" type="number" id="hours">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <!-- Input Form -->
+    <div class="wrapper container">
+        <form action="javascript:void(0)" onsubmit="handleOnSubmit(this)" id="form">
+            <div class="mb-6">
+                <label class="form-label">Tasks</label>
+                <input class="form-control" name="tasks" value="" type="text" id="tasks">
+            </div>
+            <div class="mb-6">
+                <label class="form-label">Hours</label>
+                <input class="form-control" name="hrs" value="" type="number" id="hours">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Display  Entry Table  -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tasks</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">Buttons</th>
+                </tr>
+            </thead>
+            <tbody id="entry-tasks">
+                <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Watching TV</td>
+                    <td>8 hrs</td>
+                    <td>Buttons</td>
+                </tr> -->
+
+
+            </tbody>
+        </table>
+
+    </div>
     <script src="script.js"></script>
 </body>
 
