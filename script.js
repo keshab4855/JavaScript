@@ -1007,10 +1007,27 @@
 
 /////////////////////////Try Catch///////////////////////////////////////////
 
-try {
-  let y = 1;
-  const x = 3;
-  x = 4;
-} catch (error) {
-  console.log(error.message);
-}
+// try {
+//   let y = 1;
+//   const x = 3;
+//   x = 4;
+// } catch (error) {
+//   console.log(error.message);
+// }
+
+////////////////////ToDo////////////////////////////////////////////////////
+let entryList = [];
+let badList = [];
+const handleOnSubmit = (e) => {
+  const formDt = new FormData(e);
+  console.log(formDt);
+  const tasks = formDt.get("tasks");
+  const hours = formDt.get("hrs");
+
+  const obj = { tasks, hours };
+  entryList.push(obj);
+  console.log(entryList);
+};
+
+const display
+
