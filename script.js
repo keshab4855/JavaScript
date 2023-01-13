@@ -1020,28 +1020,36 @@ let entryList = [];
 let badList = [];
 const handleOnSubmit = (e) => {
   const formDt = new FormData(e);
-  console.log(formDt);
   const tasks = formDt.get("tasks");
   const hours = formDt.get("hrs");
 
   const obj = { tasks, hours };
   entryList.push(obj);
-
+  console.log(entryList);
   display(entryList);
 };
 
 const display = (taskArg) => {
   let str = "";
   taskArg.map((item, index) => {
+    console.log(taskArg);
     str += `   <tr>
                     <th scope="row">${index + 1}</th>
                     <td>${item.tasks}</td>
                     <td>${item.hours} hours</td>
-                    <td>Buttons</td>
+                    <td>
+                    <Button onclick="deleteHandler(${index})"><i  class="fa-solid fa-arrow-right"></i></Button>
+                    <Button> <i class="fa-solid fa-trash"></i></Button>
+                   
+                    </td>
                 </tr>`;
   });
 
   document.getElementById("entry-tasks").innerHTML = str;
 };
 
-display();
+const deleteHandler = (index) => {
+  const filteredArr = entryList.filter((item, i) => index !== i);
+  entryList = filteredArr;
+  return display(entryList);
+};
