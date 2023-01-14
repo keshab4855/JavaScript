@@ -24,12 +24,14 @@
             <div class="mb-6">
                 <label class="form-label">Tasks</label>
                 <input class="form-control" name="tasks" value="" type="text" id="tasks">
+
             </div>
             <div class="mb-6">
                 <label class="form-label">Hours</label>
                 <input class="form-control" name="hrs" value="" type="number" id="hours">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" id="add-btn">Add Tasks</button>
+            <button type="submit" class="btn btn-primary" id="update-btn" style="display: none;">Update Tasks</button>
         </form>
 
         <!-- Display  Entry Table  -->
@@ -55,6 +57,7 @@
             </tbody>
 
         </table>
+
         <table class="table">
             <thead>
                 <tr>
@@ -77,6 +80,7 @@
             </tbody>
 
         </table>
+        <Button id="clear">Clear All</Buttton>
     </div>
     <script src="script.js"></script>
 </body>

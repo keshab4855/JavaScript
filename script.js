@@ -1018,6 +1018,8 @@
 ////////////////////ToDo////////////////////////////////////////////////////
 let entryList = [];
 let completedList = [];
+let tasks = document.getElementById("tasks");
+console.log(tasks.value);
 const handleOnSubmit = (e) => {
   const formDt = new FormData(e);
   const tasks = formDt.get("tasks");
@@ -1031,7 +1033,6 @@ const handleOnSubmit = (e) => {
 const display = (taskArg) => {
   let str = "";
   taskArg.map((item, index) => {
-    console.log(taskArg);
     str += `   <tr>
                     <th scope="row">${index + 1}</th>
                     <td>${item.tasks}</td>
@@ -1039,9 +1040,11 @@ const display = (taskArg) => {
                     <td>
                     <Button onclick = "completeHandler(${index})"><i class="fa-solid fa-check"></i></Button>
                     <Button  onclick="deleteHandler(${index})"> <i class="fa-solid fa-trash"></i></Button>
-                   
+                    <Button onclick="editItem(${index})"><i class="fa-solid fa-pen-to-square"></i></Buttton>
                     </td>
-                </tr>`;
+                </tr>
+                 
+                `;
   });
 
   document.getElementById("entry-tasks").innerHTML = str;
@@ -1071,6 +1074,7 @@ const completeDisplay = (arg) => {
                     <td>
                     <Button onclick = "switchToPendingTasks(${index})"><i class="fa-solid fa-check"></i></Button>
                     <Button  onclick="deleteCompletedTasks(${index})"> <i class="fa-solid fa-trash"></i></Button>
+                    <Button><i class="fa-solid fa-pen-to-square"></i></Buttton>
                    
                     </td>
                 </tr>`;
@@ -1084,6 +1088,21 @@ const deleteCompletedTasks = (index) => {
   completedList = filteredArr;
   completeDisplay(completedList);
 };
-const switchToPendingTasks = (i) => {
+const switchToPendingTasks = (index) => {
+  const newCompletedTasks = completedList.splice(index, 1);
+
+  entryList.push(newCompletedTasks[0]);
   console.log(completedList);
+  display(entryList);
+  completeDisplay(completedList);
+};
+
+const editItem = (index) => {
+  const selectedTask = entryList.filter((item, i) => index === i);
+  const newTasks = selectedTask[0].tasks;
+  const newHours = selectedTask[0].hours;
+  document.getElementById("tasks").value = newTasks;
+  document.getElementById("hours").value = newHours;
+  document.getElementById("add-btn").style.display = "none";
+  document.getElementById("update-btn").style.display = "block";
 };
