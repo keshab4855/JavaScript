@@ -1017,7 +1017,7 @@
 
 ////////////////////ToDo////////////////////////////////////////////////////
 let entryList = [];
-let badList = [];
+let completedList = [];
 const handleOnSubmit = (e) => {
   const formDt = new FormData(e);
   const tasks = formDt.get("tasks");
@@ -1025,7 +1025,6 @@ const handleOnSubmit = (e) => {
 
   const obj = { tasks, hours };
   entryList.push(obj);
-  console.log(entryList);
   display(entryList);
 };
 
@@ -1038,8 +1037,8 @@ const display = (taskArg) => {
                     <td>${item.tasks}</td>
                     <td>${item.hours} hours</td>
                     <td>
-                    <Button onclick="deleteHandler(${index})"><i  class="fa-solid fa-arrow-right"></i></Button>
-                    <Button> <i class="fa-solid fa-trash"></i></Button>
+                    <Button onclick = "completeHandler(${index})"><i class="fa-solid fa-check"></i></Button>
+                    <Button  onclick="deleteHandler(${index})"> <i class="fa-solid fa-trash"></i></Button>
                    
                     </td>
                 </tr>`;
@@ -1052,4 +1051,39 @@ const deleteHandler = (index) => {
   const filteredArr = entryList.filter((item, i) => index !== i);
   entryList = filteredArr;
   return display(entryList);
+};
+
+const completeHandler = (index) => {
+  const completedTasks = entryList.splice(index, 1);
+
+  completedList.push(completedTasks[0]);
+  display(entryList);
+  completeDisplay(completedList);
+};
+
+const completeDisplay = (arg) => {
+  let str = "";
+  arg.map((item, index) => {
+    str += `   <tr>
+                    <th scope="row">${index + 1}</th>
+                    <td>${item.tasks}</td>
+                    <td>${item.hours} hours</td>
+                    <td>
+                    <Button onclick = "switchToPendingTasks(${index})"><i class="fa-solid fa-check"></i></Button>
+                    <Button  onclick="deleteCompletedTasks(${index})"> <i class="fa-solid fa-trash"></i></Button>
+                   
+                    </td>
+                </tr>`;
+  });
+
+  document.getElementById("completed-tasks").innerHTML = str;
+};
+
+const deleteCompletedTasks = (index) => {
+  const filteredArr = completedList.filter((item, i) => index !== i);
+  completedList = filteredArr;
+  completeDisplay(completedList);
+};
+const switchToPendingTasks = (i) => {
+  console.log(completedList);
 };
