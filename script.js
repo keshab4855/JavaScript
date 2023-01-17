@@ -1016,93 +1016,128 @@
 // }
 
 ////////////////////ToDo////////////////////////////////////////////////////
-let entryList = [];
-let completedList = [];
-let tasks = document.getElementById("tasks");
-console.log(tasks.value);
-const handleOnSubmit = (e) => {
-  const formDt = new FormData(e);
-  const tasks = formDt.get("tasks");
-  const hours = formDt.get("hrs");
+// let entryList = [];
+// let completedList = [];
+// let tasks = document.getElementById("tasks");
 
-  const obj = { tasks, hours };
-  entryList.push(obj);
-  display(entryList);
-};
+///////////////////handling form submission/////////////////////////
+// const handleOnSubmit = (e) => {
+//   const formDt = new FormData(e);
+//   const tasks = formDt.get("tasks");
+//   const hours = formDt.get("hrs");
 
-const display = (taskArg) => {
-  let str = "";
-  taskArg.map((item, index) => {
-    str += `   <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${item.tasks}</td>
-                    <td>${item.hours} hours</td>
-                    <td>
-                    <Button onclick = "completeHandler(${index})"><i class="fa-solid fa-check"></i></Button>
-                    <Button  onclick="deleteHandler(${index})"> <i class="fa-solid fa-trash"></i></Button>
-                    <Button onclick="editItem(${index})"><i class="fa-solid fa-pen-to-square"></i></Buttton>
-                    </td>
-                </tr>
-                 
-                `;
-  });
+//   const obj = { tasks, hours };
+//   entryList.push(obj);
+//   display(entryList);
+// };
 
-  document.getElementById("entry-tasks").innerHTML = str;
-};
+///////////////displying the added tasks////////////////////////
+// const display = (taskArg) => {
+//   let str = "";
+//   taskArg.map((item, index) => {
+//     str += `   <tr>
+//                     <th scope="row">${index + 1}</th>
+//                     <td>${item.tasks}</td>
+//                     <td>${item.hours} hours</td>
+//                     <td>
+//                     <Button onclick = "completeHandler(${index})"><i class="fa-solid fa-check"></i></Button>
+//                     <Button  onclick="deleteHandler(${index})"> <i class="fa-solid fa-trash"></i></Button>
+//                     <Button onclick="editItem(${index})"><i class="fa-solid fa-pen-to-square"></i></Buttton>
+//                     </td>
+//                 </tr>
 
-const deleteHandler = (index) => {
-  const filteredArr = entryList.filter((item, i) => index !== i);
-  entryList = filteredArr;
-  return display(entryList);
-};
+//                 `;
+//   });
 
-const completeHandler = (index) => {
-  const completedTasks = entryList.splice(index, 1);
+//   document.getElementById("entry-tasks").innerHTML = str;
+// };
 
-  completedList.push(completedTasks[0]);
-  display(entryList);
-  completeDisplay(completedList);
-};
+///////////////////delete handler/////////////////////////////
+// const deleteHandler = (index) => {
+//   const filteredArr = entryList.filter((item, i) => index !== i);
+//   entryList = filteredArr;
+//   return display(entryList);
+// };
 
-const completeDisplay = (arg) => {
-  let str = "";
-  arg.map((item, index) => {
-    str += `   <tr>
-                    <th scope="row">${index + 1}</th>
-                    <td>${item.tasks}</td>
-                    <td>${item.hours} hours</td>
-                    <td>
-                    <Button onclick = "switchToPendingTasks(${index})"><i class="fa-solid fa-check"></i></Button>
-                    <Button  onclick="deleteCompletedTasks(${index})"> <i class="fa-solid fa-trash"></i></Button>
-                    <Button><i class="fa-solid fa-pen-to-square"></i></Buttton>
-                   
-                    </td>
-                </tr>`;
-  });
+// //////////////////completion handler////////////////////////
+// const completeHandler = (index) => {
+//   const completedTasks = entryList.splice(index, 1);
 
-  document.getElementById("completed-tasks").innerHTML = str;
-};
+//   completedList.push(completedTasks[0]);
+//   display(entryList);
+//   completeDisplay(completedList);
+// };
 
-const deleteCompletedTasks = (index) => {
-  const filteredArr = completedList.filter((item, i) => index !== i);
-  completedList = filteredArr;
-  completeDisplay(completedList);
-};
-const switchToPendingTasks = (index) => {
-  const newCompletedTasks = completedList.splice(index, 1);
+////////////////displaying the completed tasks//////////////////////
+// const completeDisplay = (arg) => {
+//   let str = "";
+//   arg.map((item, index) => {
+//     str += `   <tr>
+//                     <th scope="row">${index + 1}</th>
+//                     <td>${item.tasks}</td>
+//                     <td>${item.hours} hours</td>
+//                     <td>
+//                     <Button onclick = "switchToPendingTasks(${index})"><i class="fa-solid fa-check"></i></Button>
+//                     <Button  onclick="deleteCompletedTasks(${index})"> <i class="fa-solid fa-trash"></i></Button>
+//                     <Button><i class="fa-solid fa-pen-to-square"></i></Buttton>
 
-  entryList.push(newCompletedTasks[0]);
-  console.log(completedList);
-  display(entryList);
-  completeDisplay(completedList);
-};
+//                     </td>
+//                 </tr>`;
+//   });
 
-const editItem = (index) => {
-  const selectedTask = entryList.filter((item, i) => index === i);
-  const newTasks = selectedTask[0].tasks;
-  const newHours = selectedTask[0].hours;
-  document.getElementById("tasks").value = newTasks;
-  document.getElementById("hours").value = newHours;
-  document.getElementById("add-btn").style.display = "none";
-  document.getElementById("update-btn").style.display = "block";
-};
+//   document.getElementById("completed-tasks").innerHTML = str;
+// };
+
+////////////////deleting the tasks/////////////////////////
+// const deleteCompletedTasks = (index) => {
+//   const filteredArr = completedList.filter((item, i) => index !== i);
+//   completedList = filteredArr;
+//   completeDisplay(completedList);
+// };
+
+/////////////switching the completed tasks to pending /////////////////
+// const switchToPendingTasks = (index) => {
+//   const newCompletedTasks = completedList.splice(index, 1);
+
+//   entryList.push(newCompletedTasks[0]);
+//   console.log(completedList);
+//   display(entryList);
+//   completeDisplay(completedList);
+// };
+
+////////editing the tasks//////////////////
+// const editItem = (index) => {
+//   const selectedTask = entryList.filter((item, i) => index === i);
+//   const tasks = selectedTask[0].tasks;
+//   const hours = selectedTask[0].hours;
+//   document.getElementById("tasks").value = tasks;
+//   document.getElementById("hours").value = hours;
+//   document.getElementById("add-btn").style.display = "none";
+//   document.getElementById("update-btn").style.display = "block";
+//   document.getElementById("text-input").value = tasks;
+//   document.getElementById("hour-input").value = hours;
+//   let newObj = { tasks, hours };
+//   console.log(entryList);
+//   entryList.push(newObj);
+//   console.log(entryList);
+//   // entryList.splice(index, 1);
+//   // console.log(entryList);
+//   // entryList.splice(index, 1, newObj);
+//   // console.log(entryList);
+//   // entryList.push(newObj);
+
+//   // document.getElementById("update-btn").addEventListener("click", (newObj) => {
+//   //   console.log(entryList);
+//   //   entryList.splice(index, 1, newObj);
+//   //   // let replacedList = entryList.splice(index, 1, "newObj");
+//   //   // console.log(replacedList);
+//   // });
+// };
+
+////////CLearing all the tasks
+// document.getElementById("clear").addEventListener("click", () => {
+//   entryList = [];
+//   completedList = [];
+//   display(entryList);
+//   completeDisplay(completedList);
+// });
